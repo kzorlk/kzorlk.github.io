@@ -87,11 +87,11 @@ h2 {
     border: 5px solid blanchedalmond;
 }
 .gallery-img {
+    width: 40em;
+    height: 40em;
     display: block;
 
     margin: auto;
-
-    height: calc(60vw * 9 / 16);
 }
 .gallery-caption {
     position: absolute;
