@@ -11,3 +11,30 @@ function showDropdown(id) {
             dropdown.style.maxHeight = '0px';
         }
 }
+
+function showSlide(n) {
+    const slides = document.getElementsByClassName('slide');
+    const dots = document.getElementsByClassName('dot');
+    slideIndex = n;
+    if (n > slides.length) {slideIndex = 1};
+    if (n < 1) {slideIndex = slides.length};
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+        dots[i].className = dots[i].className.replace(' activeDot', '');
+    }
+    slides[slideIndex-1].style.display = 'block';
+    dots[slideIndex-1].className += ' activeDot';
+    if (dots[slideIndex-1].className.includes('activeDot')) {console.log('on')}
+}
+
+function plusSlides(n) {
+    showSlide(slideIndex + n)
+}
+
+function changeSlide(n) {
+    showSlide(n)
+}
+
+
+let slideIndex = 1;
+showSlide(slideIndex)
